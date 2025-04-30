@@ -8,7 +8,10 @@
 body {
   font-family: 'Arial', sans-serif;
   color: white;
-  background-color: #00a84f; /* Green background as shown */
+  background-color: #b5f0c2;
+
+  background-color: #b5f0c2;
+
 }
 
 /* Navbar styles */
@@ -20,7 +23,8 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #00a84f;
+  background-color: #b5f0c2;
+;
   z-index: 1000;
 }
 
@@ -89,7 +93,8 @@ body {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #00a84f;
+    background-color: #b5f0c2;
+;
     position: absolute;
     top: 60px;
     right: 0;
@@ -110,70 +115,28 @@ body {
   }
 }
 /* Phone mockup section */
-.mockup-section {
-  background-color: #00a84f;
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-.app-buttons {
-  margin-bottom: 2rem;
+.phone-section {
+  background-color: #b5f0c2;
+; 
+  padding: 4rem 1rem 0; /* No bottom padding */
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  align-items: flex-end;
 }
 
-.app-buttons img {
-  height: 50px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.app-buttons img:hover {
-  transform: scale(1.05);
-}
-
-.mockup-phones {
+.phone-section .container {
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  position: relative;
+  margin-bottom: 0; /* Ensures no space below */
 }
 
-.phone {
-  width: 250px;
-  max-width: 90%;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
 
-.phone.left {
-  transform: rotate(-10deg);
-  z-index: 1;
-}
-
-.phone.center {
-  transform: scale(1.05);
-  z-index: 2;
-}
-
-.phone.right {
-  transform: rotate(10deg);
-  z-index: 1;
-}
 
 @media (max-width: 768px) {
-  .mockup-phones {
-    flex-direction: column;
-  }
-
-  .phone.left,
-  .phone.right {
-    transform: none;
+  .phone-img {
+    max-width: 95%;
   }
 }
 /* WhatCan Section */
@@ -209,7 +172,7 @@ body {
 /* Decorative backgrounds */
 .whatcan-bg {
   position: absolute;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cowrie_shell_icon.svg/512px-Cowrie_shell_icon.svg.png');
+  background-image: url('images/co.png');
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.08;
@@ -303,7 +266,7 @@ box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .img1 {
-background-image: url('images/fan1.jpg'); /* Replace with local file */
+background-image: url('images/st.png'); 
 transform: rotate(-6deg);
 top: 20px;
 left: 20px;
@@ -311,7 +274,7 @@ z-index: 1;
 }
 
 .img2 {
-background-image: url('images/fan2.jpg'); /* Replace with local file */
+background-image: url('images/st1.png'); 
 transform: rotate(0deg);
 top: 0;
 left: 0;
@@ -319,7 +282,7 @@ z-index: 2;
 }
 
 .img3 {
-background-image: url('images/fan3.jpg'); /* Replace with local file */
+background-image: url('images/st3.png'); 
 transform: rotate(6deg);
 top: 20px;
 left: -20px;
@@ -744,6 +707,8 @@ background-size: 20px 20px;
 padding: 6rem 2rem 8rem;
 border-bottom-left-radius: 120px;
 border-bottom-right-radius: 120px;
+border-top-left-radius: 120px;
+border-top-right-radius: 120px;
 color: white;
 text-align: center;
 position: relative;
