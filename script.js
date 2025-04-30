@@ -20,5 +20,3 @@ console.log("Earn section loaded");
 console.log("Filter section loaded");
 // Nothing dynamic yet for this section
 console.log("Secure Communication section loaded");
-
-
