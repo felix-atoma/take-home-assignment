@@ -8,9 +8,9 @@
 body {
   font-family: 'Arial', sans-serif;
   color: white;
-  background-color: #b5f0c2;
+  background-color: #00a84f;
 
-  background-color: #b5f0c2;
+  background-color: #00a84f;
 
 }
 
@@ -23,7 +23,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #b5f0c2;
+  background-color: #00a84f;
 ;
   z-index: 1000;
 }
@@ -93,7 +93,7 @@ body {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #b5f0c2;
+    background-color: #00a84f;
 ;
     position: absolute;
     top: 60px;
@@ -116,7 +116,7 @@ body {
 }
 /* Phone mockup section */
 .phone-section {
-  background-color: #b5f0c2;
+  background-color: #00a84f;
 ; 
   padding: 4rem 1rem 0; /* No bottom padding */
   display: flex;
