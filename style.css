@@ -114,31 +114,81 @@ body {
     font-size: 2.5rem;
   }
 }
-/* Phone mockup section */
-.phone-section {
-  background-color: #00a84f;
-; 
-  padding: 4rem 1rem 0; /* No bottom padding */
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+.app-showcase {
+  text-align: center;
+  padding: 2rem 1rem 0;
+  background-color: #ffffff;
 }
 
-.phone-section .container {
+.app-showcase .store-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.app-showcase .store-buttons img {
+  height: 55px;
+}
+
+.phones-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+/* Main overlap logic */
+.phones {
+  position: relative;
   width: 100%;
   max-width: 1000px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0; /* Ensures no space below */
+  height: 520px;
+  margin: 0 auto;
+}
+
+.phone {
+  position: absolute;
+  max-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.phone-left {
+  top: 60px;
+  left: 50%;
+  transform: translateX(-160%) rotate(-15deg);
+  z-index: 1;
+}
+
+.phone-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.phone-right {
+  top: 60px;
+  left: 50%;
+  transform: translateX(60%) rotate(15deg);
+  z-index: 2;
 }
 
 
-
+/* Responsive */
 @media (max-width: 768px) {
-  .phone-img {
-    max-width: 95%;
+  .app-showcase .phone {
+    max-width: 150px;
+  }
+
+  .app-showcase .phones {
+    height: 400px;
+  }
+
+  .app-showcase .store-buttons img {
+    height: 45px;
   }
 }
+
 /* WhatCan Section */
 .whatcan-section {
   position: relative;
@@ -168,43 +218,74 @@ body {
   color: #444;
   line-height: 1.7;
 }
+.whatcan-section {
+  position: relative;
+  background-color: #fefefe;
+  color: #111;
+  padding: 6rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
 
-/* Decorative backgrounds */
-.whatcan-bg {
+.whatcan-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.whatcan-content h2 {
+  font-size: 3rem;
+  color: #008443;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.whatcan-content p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Cowry background shapes */
+.cowry-bg {
   position: absolute;
-  background-image: url('images/co.png');
+  background-image: url('images/cowry.png'); /* Replace with actual cowry SVG path */
   background-repeat: no-repeat;
   background-size: contain;
-  opacity: 0.08;
+  opacity: 0.06;
   z-index: 1;
 }
 
-.whatcan-bg.left {
+.cowry-bg.left {
   top: 0;
   left: 0;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
 }
 
-.whatcan-bg.right {
+.cowry-bg.right {
   top: 0;
   right: 0;
   width: 300px;
   height: 300px;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .whatcan-content h2 {
     font-size: 2rem;
   }
 
-  .whatcan-bg.left,
-  .whatcan-bg.right {
-    opacity: 0.05;
+  .cowry-bg.left,
+  .cowry-bg.right {
     width: 200px;
     height: 200px;
   }
 }
+
 /* Fans Section */
 .fans-section {
 display: flex;
