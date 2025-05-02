@@ -446,35 +446,38 @@ html, body {
     max-width: 260px;
   }
 }
-
 /* ====================================
-   ✅ Section 7: Replies Section
+   ✅ Section 7: Replies Section (Split 50/50 Layout)
 ==================================== */
 .replies-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   background-color: #00a84f;
   color: white;
-  padding: 5rem 2rem;
-  gap: 2rem;
+  padding: 0;
+  min-height: 600px; /* or use height: 100vh for full screen */
 }
 
 .replies-left {
-  flex: 1 1 45%;
-  padding: 2rem;
+  flex: 1 1 50%;
+  background-color: #00a84f;
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .replies-left h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .replies-left p {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1.3rem;
+  line-height: 1.8;
 }
 
 .reply-icon {
@@ -491,22 +494,22 @@ html, body {
 }
 
 .replies-right {
-  flex: 1 1 45%;
+  flex: 1 1 50%;
   background-color: #f7f5f0;
-  padding: 2rem;
-  border-radius: 20px;
-  min-height: 400px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 4rem 3rem;
+  border-left: 2px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .chat-bubble {
   background-color: white;
   color: #000;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   border-radius: 20px;
   margin-bottom: 1rem;
   max-width: 90%;
-  position: relative;
   font-size: 1rem;
 }
 
@@ -517,7 +520,6 @@ html, body {
 .chat-bubble.receiver {
   align-self: flex-end;
   background-color: #e8f5e9;
-  margin-left: auto;
 }
 
 .time {
@@ -555,19 +557,29 @@ html, body {
   filter: grayscale(1);
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
   .replies-section {
     flex-direction: column;
-    gap: 2rem;
+    min-height: auto;
   }
 
   .replies-left,
   .replies-right {
-    padding: 1rem;
+    flex: 1 1 100%;
+    padding: 2.5rem 1.5rem;
   }
 
-  .replies-right {
-    margin-top: 0;
+  .replies-left h2 {
+    font-size: 2rem;
+  }
+
+  .replies-left p {
+    font-size: 1.1rem;
+  }
+
+  .chat-bubble {
+    max-width: 100%;
   }
 }
 
