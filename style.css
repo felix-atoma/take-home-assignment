@@ -129,126 +129,124 @@ html, body {
   }
 }
 
-/* ====================================
-   ✅ Section 3: Hero Section
-==================================== */
 .hero {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
   min-height: 100vh;
+  background-color: #00a84f;
   text-align: center;
-  padding: 6rem 2rem 2rem; /* for navbar space */
+  color: white;
 }
 
-.hero h1 {
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
   font-size: 3.5rem;
   font-weight: bold;
   line-height: 1.2;
-  max-width: 900px;
+  max-width: 800px;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-    line-height: 1.4;
-  }
-}
-
-
-/* ====================================
-   ✅ Section 4: App Showcase Section
-==================================== */
-.app-showcase {
-  background-color: #ffffff;
-  text-align: center;
-  padding: 5rem 1rem 2rem;
-}
-
-.app-showcase .store-buttons {
+.store-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
-.app-showcase .store-buttons img {
+.store-buttons img {
   height: 55px;
 }
 
+/* Phone Styles */
 .phones-wrapper {
   position: relative;
   width: 100%;
-  overflow: visible;
+  max-width: 900px;
+  height: 420px;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .phones {
   position: relative;
   width: 100%;
-  max-width: 1000px;
-  height: 520px;
-  margin: 0 auto;
+  height: 100%;
+  max-width: 700px;
 }
 
 .phone {
   position: absolute;
-  max-width: 250px;
+  bottom: 0;
+  max-height: 100%;
+  max-width: 220px;
   transition: transform 0.3s ease;
 }
 
-.phone-left {
-  top: 60px;
-  left: 50%;
-  transform: translateX(-160%) rotate(-15deg);
-  z-index: 1;
-}
-
 .phone-center {
-  top: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
 }
 
-.phone-right {
-  top: 60px;
+.phone-left {
   left: 50%;
-  transform: translateX(60%) rotate(15deg);
+  transform: translateX(-160%) rotate(-15deg);
   z-index: 2;
 }
 
+.phone-right {
+  left: 50%;
+  transform: translateX(60%) rotate(15deg);
+  z-index: 1;
+}
+
+/* Responsive Fix */
 @media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .phones-wrapper {
+    height: auto;
+  }
+
   .phones {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;
     gap: 1rem;
+    position: static;
   }
 
   .phone {
     position: static;
     transform: none;
-    max-width: 150px;
-    margin-bottom: 1rem;
+    max-width: 160px;
   }
 
-  .app-showcase .store-buttons img {
+  .store-buttons img {
     height: 45px;
   }
 }
-
-
 /* ====================================
-   ✅ Section 5: WhatCan Section
+   ✅ Section 5: WhatCan Section (Updated)
 ==================================== */
 .whatcan-section {
   position: relative;
   background-color: #fefefe;
   color: #111;
   padding: 6rem 2rem;
-  text-align: center;
   overflow: hidden;
   background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 20px 20px;
@@ -256,7 +254,10 @@ html, body {
 
 .whatcan-content {
   max-width: 900px;
-  margin: 0 auto;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  padding-left: 2rem;
   position: relative;
   z-index: 2;
 }
@@ -274,6 +275,7 @@ html, body {
   color: #444;
 }
 
+/* Updated Cowry Background with Hosted Image */
 .cowry-bg {
   position: absolute;
   background-image: url('images/cowry.png');
@@ -298,8 +300,19 @@ html, body {
 }
 
 @media (max-width: 768px) {
+  .whatcan-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
   .whatcan-content h2 {
     font-size: 2rem;
+  }
+
+  .whatcan-content p {
+    font-size: 1rem;
   }
 
   .cowry-bg.left,
@@ -307,29 +320,23 @@ html, body {
     width: 200px;
     height: 200px;
   }
-
-  .whatcan-content p {
-    font-size: 1rem;
-  }
 }
-
-
 /* ====================================
-   ✅ Section 6: Fans Section
+   ✅ Section 6: Fans Section (Fully Updated)
 ==================================== */
 .fans-section {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 5rem 2rem;
+  padding: 10rem 3rem; /* More vertical spacing */
   background-color: #fff;
-  gap: 2rem;
+  gap: 6rem; /* Increased gap between text and image stack */
 }
 
 .fans-text {
   flex: 1 1 45%;
-  padding: 1rem 2rem;
+  padding: 3rem 4rem;
 }
 
 .fans-tag {
@@ -337,23 +344,23 @@ html, body {
   background-color: #fbbc57;
   color: #000;
   font-weight: bold;
-  font-size: 0.9rem;
-  padding: 0.4rem 1.2rem;
+  font-size: 1rem;
+  padding: 0.6rem 1.6rem;
   border-radius: 25px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .fans-text h2 {
-  font-size: 2.5rem;
+  font-size: 3.4rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #111;
 }
 
 .fans-text p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.9;
 }
 
 .fans-image-stack {
@@ -361,33 +368,34 @@ html, body {
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 2rem;
-  height: 360px;
+  align-items: center;
+  padding: 5rem 2rem 7rem; /* More bottom padding to shift down */
+  height: 500px; /* Increased height to accommodate shifted images */
   min-width: 280px;
 }
 
 .stacked-img {
   position: absolute;
-  width: 250px;
-  height: 340px;
+  width: 260px;
+  height: 360px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .img1 {
   background-image: url('images/st.png');
   transform: rotate(-6deg);
-  top: 20px;
-  left: 20px;
+  top: 80px;
+  left: 30px;
   z-index: 1;
 }
 
 .img2 {
   background-image: url('images/st1.png');
   transform: rotate(0deg);
-  top: 0;
+  top: 50px;
   left: 0;
   z-index: 2;
 }
@@ -395,8 +403,8 @@ html, body {
 .img3 {
   background-image: url('images/st3.png');
   transform: rotate(6deg);
-  top: 20px;
-  left: -20px;
+  top: 80px;
+  left: -30px;
   z-index: 0;
 }
 
@@ -404,10 +412,20 @@ html, body {
   .fans-section {
     flex-direction: column;
     text-align: center;
+    padding: 6rem 1.5rem;
+    gap: 4rem;
   }
 
   .fans-text {
-    padding: 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .fans-text h2 {
+    font-size: 2.4rem;
+  }
+
+  .fans-text p {
+    font-size: 1.2rem;
   }
 
   .fans-image-stack {
@@ -415,7 +433,8 @@ html, body {
     align-items: center;
     position: static;
     height: auto;
-    gap: 1rem;
+    gap: 2rem;
+    padding: 3rem 1rem;
   }
 
   .stacked-img {
@@ -424,10 +443,9 @@ html, body {
     margin: 0 auto;
     width: 80%;
     height: auto;
-    max-width: 250px;
+    max-width: 260px;
   }
 }
-
 
 /* ====================================
    ✅ Section 7: Replies Section
