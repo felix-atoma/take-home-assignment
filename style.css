@@ -991,6 +991,18 @@ html, body {
   padding: 4rem 2rem;
   border-top: 1px solid #eee;
   color: #000;
+  animation: slideUp 0.7s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 .footer-newsletter {
@@ -1011,6 +1023,7 @@ html, body {
   gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
+  flex-direction: row;
 }
 
 .newsletter-form input {
@@ -1019,17 +1032,25 @@ html, body {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  width: 100%;
 }
 
 .newsletter-form button {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
-  background-color: #000;
+  background-color: #28a745; /* Green */
   color: #fff;
   border: none;
   border-radius: 6px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.newsletter-form button:hover {
+  background-color: #218838; /* Darker green */
+  transform: scale(1.05);
 }
 
 .footer-grid {
@@ -1042,11 +1063,13 @@ html, body {
 
 .footer-brand {
   flex: 1 1 220px;
+  text-align: center;
 }
 
 .footer-brand .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   font-size: 1.3rem;
   font-weight: bold;
@@ -1060,7 +1083,9 @@ html, body {
 
 .footer-social {
   display: flex;
+  justify-content: center;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .footer-social a {
@@ -1079,6 +1104,7 @@ html, body {
 
 .footer-links {
   flex: 1 1 150px;
+  text-align: center;
 }
 
 .footer-links h4 {
@@ -1099,18 +1125,36 @@ html, body {
   text-decoration: underline;
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
   .footer-grid {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-  }
-
-  .footer-social {
-    justify-content: center;
   }
 
   .newsletter-form {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .footer-links {
+    margin-top: 2rem;
+  }
+
+  .footer-brand,
+  .footer-links {
+    width: 100%;
+  }
+
+  .footer-social {
+    justify-content: center;
   }
 }
